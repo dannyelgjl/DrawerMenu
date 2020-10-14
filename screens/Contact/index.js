@@ -1,16 +1,17 @@
 import React from 'react';
 
-import { Block, Text } from 'expo-ui-kit'
+import { View, Text } from 'react-native'
+//import { Block, Text } from 'expo-ui-kit'
 
 // import { Container } from './styles';
 
 const Contact = () => {
   return (
-    <Block>
+    <View>
       <Text>
         Contact
       </Text>
-    </Block>
+    </View>
   );
 }
 
