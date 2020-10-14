@@ -1,13 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
+import { Block, Text } from 'expo-ui-kit'
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
+    <Block center middle>
       <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <Text bold>React-Navigation v5</Text>
+    </Block>
+    </NavigationContainer>
   );
 }
 
