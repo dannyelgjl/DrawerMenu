@@ -1,7 +1,7 @@
 import React from 'react'
 //import { Block, Text, Button } from 'expo-ui-kit'
-import { Image, View, Text, TouchableOpacity } from 'react-native'
-import { createDrawerNavigator } from '@react-navigation/drawer'
+import { Image, View, Text, TouchableOpacity, Linking } from 'react-native'
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import DashBoard from './screens/DashBoard'
@@ -38,9 +38,33 @@ const Screens = ({ navigation }) => {
 	)
 }
 
+const DrawerContent = (props) => {
+
+	return(
+		<DrawerContentScrollView {...props}>
+		<DrawerItem 
+			label="DashBoard"
+			onPress={() => props.navigation.navigate("DashBoard")}
+		/>
+
+		<DrawerItem 
+			label="Messages"
+			onPress={() => props.navigation.navigate("Messages")}
+		/>
+
+		<DrawerItem 
+			label="Contact"
+			onPress={() => props.navigation.navigate("Contact")}
+		/>
+		</DrawerContentScrollView>
+	)	
+}
+
 export default () => {
   return (
-    <Drawer.Navigator initialRouteName="DashBoard">
+	<Drawer.Navigator 
+			initialRouteName="DashBoard" 
+			drawerContent={props => <DrawerContent {...props}/>}>
       <Drawer.Screen  name="Screens" component={Screens} /> 
       
     </Drawer.Navigator>
