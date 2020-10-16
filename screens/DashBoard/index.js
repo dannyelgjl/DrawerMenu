@@ -8,7 +8,7 @@ import { View, Text, StyleSheet } from 'react-native'
 const DashBoard = () => {
   return (
     <View style={styles.container}>
-      <Text>
+      <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>
         DashBoard
       </Text>
     </View>
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#2A292B",
     justifyContent: "center",
     
   }
