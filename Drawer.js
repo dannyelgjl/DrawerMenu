@@ -38,24 +38,31 @@ const Screens = ({ navigation }) => {
 	)
 }
 
+
 const DrawerContent = (props) => {
 
-	return(
+	return (
 		<DrawerContentScrollView {...props}>
-		<DrawerItem 
-			label="DashBoard"
-			onPress={() => props.navigation.navigate("DashBoard")}
-		/>
+			<View>
+				{/** add avantar */}
+				<View>
+					<Image source={{ uri: "https://avatars2.githubusercontent.com/u/54491980?s=460&u=16764239edddf8be331bc238fef74b30ec8d4597&v=4", height: 60, width: 60 }} />
+				</View>
+				<DrawerItem 
+					label="DashBoard"
+					onPress={() => props.navigation.navigate("DashBoard")}
+				/>
 
-		<DrawerItem 
-			label="Messages"
-			onPress={() => props.navigation.navigate("Messages")}
-		/>
+				<DrawerItem 
+					label="Messages"
+					onPress={() => props.navigation.navigate("Messages")}
+				/>
 
-		<DrawerItem 
-			label="Contact"
-			onPress={() => props.navigation.navigate("Contact")}
-		/>
+				<DrawerItem 
+					label="Contact"
+					onPress={() => props.navigation.navigate("Contact")}
+				/>
+			</View>
 		</DrawerContentScrollView>
 	)	
 }
@@ -65,6 +72,7 @@ export default () => {
 	<Drawer.Navigator 
 			initialRouteName="DashBoard" 
 			drawerContent={props => <DrawerContent {...props}/>}>
+
       <Drawer.Screen  name="Screens" component={Screens} /> 
       
     </Drawer.Navigator>
